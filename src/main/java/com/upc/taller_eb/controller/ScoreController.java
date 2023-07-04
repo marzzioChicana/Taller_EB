@@ -18,7 +18,7 @@ public class ScoreController {
     //EndPoint: localhost:8080/api/v1/drivers/{driverId}/scores
     //Method: GET
     @Transactional
-    @PostMapping("/drivers/{driverId}/scores")
+    @GetMapping("/drivers/{driverId}/scores")
     public Float getScoresByDriverId(@PathVariable Long driverId, @RequestParam(required = false) Integer scope){
         if(scope == null) {
             throw new  ValidationException("Scope value not specified");
